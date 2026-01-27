@@ -31,7 +31,7 @@ dnf install nodejs -y
 VALIDATE $? "Installing nodejs"
 
 id expense
-if [ $? -eq 0 ]
+if [ $? -nq 0 ]
 then
     echo "user id expense is not present, creating now"
     useradd expense
