@@ -55,9 +55,10 @@ VALIDATE $? "UNZIPIPPING code"
 npm install
 VALIDATE $? "Installing npm packages"
 
-mkdir -p /etc/systemd/system/backend.service
+mkdir -p etc/systemd/system/backend.service
 VALIDATE $? "Creating backend service"
-cp home/ec2-user/Expense-shell/backend.service /etc/systemd/system/backend.service
+
+cp /home/ec2-user/Expense-shell/backend.service etc/systemd/system/backend.service
 
 
 dnf install mysql -y
