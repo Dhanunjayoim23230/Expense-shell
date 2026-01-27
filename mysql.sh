@@ -36,6 +36,9 @@ if [ $? -ne 0 ]
 then
     echo "ROOT PASSWORD NOT set"
     mysql_secure_installation --set-root-pass ExpenseApp@1
+    VALIDATE $? "MYSQL root password setup"
+else
+    echo "MYSQL root password already set"
 fi
 
 
