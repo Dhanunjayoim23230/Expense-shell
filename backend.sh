@@ -58,3 +58,23 @@ VALIDATE $? "Installing npm packages"
 mkdir -p /etc/systemd/system/backend.service
 VALIDATE $? "Creating backend service"
 cp home/ec2-user/Expense-shell/backend.service /etc/systemd/system/backend.service
+
+
+dnf install mysql -y
+VALIDATE $? "Install MYSQL"
+
+mysql -h 172.31.20.146 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+VALIDATE $? "Setting up schema users"
+
+systemctl daemon-reload
+VALIDATE $? "Daemon reload BACKEND service"
+
+systemctl start backend
+VALIDATE $? "start BACKEND service"
+
+systemctl enable backend
+VALIDATE $? "enable BACKEND service"
+
+systemctl restart backend
+VALIDATE $? "Restart BACKEND service"
+
