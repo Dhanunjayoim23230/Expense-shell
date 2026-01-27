@@ -40,14 +40,18 @@ else
 fi
 
 mkdir -p /app
+VALIDATE $? "Creating app directory"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+VALIDATE $? "Downloading code"
 
 cd /app
+rm -rf /app/*
 
 unzip /tmp/backend.zip
+VALIDATE $? "UNZIPIPPING code"
 
 npm install
 VALIDATE $? "Installing npm packages"
 
-cp backend.service /etc/systemd/system/backend.service
+cp home/ec2-user/Expense-shell/backend.service /etc/systemd/system/backend.service
