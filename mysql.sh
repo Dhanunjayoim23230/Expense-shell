@@ -1,9 +1,9 @@
-#!bin/bash
+#!/bin/bash
 
 USER_ID=$(id -u)
 
 CHECK_ROOT(){
-    if [ USER_ID -ne 0 ]
+    if [ $USER_ID -ne 0 ]
     then
         echo " You must need sudo permissions "
         exit 1
