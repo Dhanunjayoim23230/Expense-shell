@@ -70,8 +70,8 @@ VALIDATE $? "Setting up schema users"
 systemctl daemon-reload
 VALIDATE $? "Daemon reload BACKEND service"
 
-systemctl start backend
-VALIDATE $? "start BACKEND service"
+# systemctl start backend
+# VALIDATE $? "start BACKEND service"
 
 systemctl enable backend
 VALIDATE $? "enable BACKEND service"
