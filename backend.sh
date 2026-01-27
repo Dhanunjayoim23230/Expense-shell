@@ -29,3 +29,20 @@ VALIDATE $? "ENABLING nodejs"
 
 dnf install nodejs -y
 VALIDATE $? "Installing nodejs"
+
+id expense
+if [ $? -eq 0 ]
+then
+    echo "user id expense is not present, creating now"
+    useradd expense
+else
+    echo "User id expense is already present"
+fi
+
+mkdir -p /app
+
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+
+cd /app
+
+unzip /tmp/backend.zip
