@@ -76,4 +76,4 @@ systemctl enable backend
 VALIDATE $? "Enabling backend"
 
 systemctl restart backend
-VALIDATE $? "Starting Backend"
+VALIDATE $? "Starting Backend" 
