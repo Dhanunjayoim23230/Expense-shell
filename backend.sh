@@ -68,14 +68,10 @@ mysql -h mysql.vrushali.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "Setting up schema users"
 
 systemctl daemon-reload
-VALIDATE $? "Daemon reload BACKEND service"
-
-# systemctl start backend
-# VALIDATE $? "start BACKEND service"
+VALIDATE $? "Daemon Reload"
 
 systemctl enable backend
-VALIDATE $? "enable BACKEND service"
+VALIDATE $? "Enabling backend"
 
 systemctl restart backend
-VALIDATE $? "Restart BACKEND service"
-
+VALIDATE $? "Starting Backend"
