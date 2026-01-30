@@ -64,7 +64,7 @@ VALIDATE $? "COPY backend service"
 dnf install mysql -y
 VALIDATE $? "Install MYSQL"
 
-mysql -h backend.vrushali.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql.vrushali.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "Setting up schema users"
 
 systemctl daemon-reload
