@@ -4,7 +4,7 @@ USER_ID=$(id -u)
 
 
 CHECK_ROOT(){
-    if [ USER_ID -ne 0 ]
+    if [ $USER_ID -ne 0 ]
     then
         echo "YOU MUST NEED SUDO PERMISSIONS"
         exit 1
