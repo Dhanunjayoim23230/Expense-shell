@@ -58,7 +58,9 @@ VALIDATE $? "Installing npm packages"
 mkdir -p etc/systemd/system/backend.service
 VALIDATE $? "Creating backend service"
 
-cp "/home/ec2-user/Expense-shell/backend.service" "etc/systemd/system/backend.service"
+# cp "/home/ec2-user/Expense-shell/backend.service" "etc/systemd/system/backend.service"
+
+cp /home/ec2-user/Expense-Shell/backend.service /etc/systemd/system/backend.service
 VALIDATE $? "COPY backend service"
 
 dnf install mysql -y
