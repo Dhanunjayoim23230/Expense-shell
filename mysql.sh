@@ -31,7 +31,7 @@ VALIDATE $? "ENABLING Mysql"
 systemctl start mysqld
 VALIDATE $? "Starting MYSQL"
 
-mysql -h 172.31.20.146 -u root -pExpenseApp@1 -e 'show databases;'
+mysql -h mysql.vrushali.online -u root -pExpenseApp@1 -e 'show databases;'
 if [ $? -ne 0 ]
 then
     echo "ROOT PASSWORD NOT set"
