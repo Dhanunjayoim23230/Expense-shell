@@ -60,8 +60,8 @@ VALIDATE $? "Creating backend service"
 
 # cp "/home/ec2-user/Expense-shell/backend.service" "etc/systemd/system/backend.service"
 
-cp /home/ec2-user/Expense-Shell/backend.service /etc/systemd/system/backend.service
-VALIDATE $? "COPY backend service"
+mv /home/ec2-user/Expense-shell/backend.service /etc/systemd/system/backend.service
+VALIDATE $? "Move backend service"
 
 dnf install mysql -y
 VALIDATE $? "Install MYSQL"
